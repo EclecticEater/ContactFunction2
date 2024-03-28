@@ -42,15 +42,15 @@ namespace FunctionApp1
                     senderAddress: "DoNotReply@f3ff103a-4ef2-48bb-9534-d909eff3ecfe.azurecomm.net",
                     recipientAddress: "justinpop24@gmail.com",
                     subject: "Message from: " + emailAddress,
-                    htmlContent: $"<html><h1>Here is there message: {message}</h1l></html>",
-                    plainTextContent: $"Here is there message: {message}");
+                    htmlContent: $"<html>Here is the message: {message}</html>",
+                    plainTextContent: $"Here is the message: {message}");
 
                 EmailSendOperation emailSendOperation2 = emailClient.Send(
                     WaitUntil.Completed,
                     senderAddress: "DoNotReply@f3ff103a-4ef2-48bb-9534-d909eff3ecfe.azurecomm.net",
                     recipientAddress: emailAddress,
                     subject: "Message from: " + emailAddress,
-                    htmlContent: $"<html><h1>You have sent an email to Justin Popkowski</h1l></html>",
+                    htmlContent: $"<html>You have sent an email to Justin Popkowski</html>",
                     plainTextContent: "You have sent an email to Justin Popkowski");
 
                 emailSendOperation2.WaitForCompletionAsync();
